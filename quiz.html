@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Code Quiz</title>
+    <script type="text/Javascript" src=".\functions.js"></script>
+</head>
+<body>
+<div class="container col-12">
+    <a class="waves-effect waves-light btn modal-trigger center-align" data-target="modal1" href="#modal1">question 1</a>
+
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Question 1</h4>
+        <p>What is the element used and hidden in code that explains things and makes the content more readable?</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" id="q1a1" class="modal-close waves-effect waves-green btn-flat" >Notes</a>
+        <a href="#!" id="q1a2" class="modal-close waves-effect waves-green btn-flat">Quotations</a>
+        <a href="#!" id="q1a3" class="modal-close waves-effect waves-green btn-flat" onclick="correct()">Comments</a>
+        <a href="#!" id="q1a4" class="modal-close waves-effect waves-green btn-flat">Arrays</a>
+      </div>
+    </div>
+    <a class="waves-effect waves-light btn modal-trigger center-align" href="#modal2">question 2</a>
+
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <h4>Question 2</h4>
+        <p>what is a Javascript element that holds true and false values</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" id="q2a1" class="modal-close waves-effect waves-green btn-flat">Object</a>
+        <a href="#!" id="q2a2" class="modal-close waves-effect waves-green btn-flat">Array</a>
+        <a href="#!" id="q2a3" class="modal-close waves-effect waves-green btn-flat" onclick="correct()">Boolean</a>
+        <a href="#!" id="q2a4" class="modal-close waves-effect waves-green btn-flat">String</a>
+      </div>
+    </div>
+
+    <a class="waves-effect waves-light btn modal-trigger center-align" href="#modal3">question 3</a>
+
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <h4>Question 3</h4>
+        <p>what is a Javascript element that uses a block of code to perform an action?</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" id="q3a1" class="modal-close waves-effect waves-green btn-flat">Object</a>
+        <a href="#!" id="q3a2" class="modal-close waves-effect waves-green btn-flat">Variable</a>
+        <a href="#!" id="q3a3" class="modal-close waves-effect waves-green btn-flat" onclick="correct()">Function</a>
+        <a href="#!" id="q3a4" class="modal-close waves-effect waves-green btn-flat">String</a>
+      </div>
+    </div>
+    <a class="waves-effect waves-light btn" href="./quiz.html" onclick="startQuiz()">Start Quiz</a>
+    <a class="waves-effect waves-light btn modal-trigger center-block" href="#modal4">question 4</a>
+
+    <div id="modal4" class="modal">
+      <div class="modal-content">
+        <h4>Question 4</h4>
+        <p>What is the file that is used to style an html file called</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" id="q4a1" class="modal-close waves-effect waves-green btn-flat" onclick="wrongLast()">Object</a>
+        <a href="#!" id="q4a2" class="modal-close waves-effect waves-green btn-flat" onclick="correctLast()">stylesheet</a>
+        <a href="#!" id="q4a3" class="modal-close waves-effect waves-green btn-flat" onclick="wrongLast()">spreadsheet</a>
+        <a href="#!" id="q4a4" class="modal-close waves-effect waves-green btn-flat" onclick="wrongLast()">variables</a>
+      </div>
+    </div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script type="text/Javascript">
+//materialize initialization
+  document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems, options);
+    });
+  M.AutoInit();
+  </script>
+</html>
