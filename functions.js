@@ -1,44 +1,42 @@
 let highscore = [
     {name:"Bruno", score:"4"}
 ]
-let sortedscores = highscore.sort(score);
 let score = 0
 
 
-startQuiz() {
+function startQuiz() {
     setTimeout(endquiz(), 30000);
+    window.location.href = "quiz.html";
 }
 
-endquiz() {
-    window.location.assign("/index.html");
-    export endquiz();
+function endquiz() {
+    var person = prompt("Please enter your name", "Name");
+    highscore.push({name:person, score:score});
+    window.location.href = "index.html";
+    window.localStorage.setItem("highscores", JSON.stringify(highscore))
 }
 
-correct() {
-    score + 1;
+function correct() {
+    score++;
     console.log(score);
-    export correct();
 }
 
-correctLast() {
-    score + 1;
-    var person = prompt("Please enter your name", "Name");
-    person + score = highscore.push({name:person, score:score});
+function correctLast() {
+    score++;
     endquiz();
 }
 
-wrongLast() {
-    var person = prompt("Please enter your name", "Name");
-    person + score = highscore.push({name:person, score:score});
+function wrongLast() {
     endquiz();
 }
 
-displayscores() {
+function displayscores() {
+    var highscores = JSON.parse(localStorage.getItem("highscores"))
     var html = "<table border='1|1'>";
-    for (var i = 0; i < highscore.length; i++) {
+    for (var i = 0; i < highscores.length; i++) {
         html+="<tr>";
-            html+="<td>"+highscore[i].name+"</td>";
-            html+="<td>"+highscore[i].score+"</td>";
+            html+="<td>"+highscores[i].name+"</td>";
+            html+="<td>"+highscores[i].score+"</td>";
         html+="</tr>";
     
     }
@@ -46,20 +44,3 @@ displayscores() {
     document.getElementById("datalocation").innerHTML = html;
     console.log(highscore);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
